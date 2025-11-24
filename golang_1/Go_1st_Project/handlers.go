@@ -111,21 +111,25 @@ func deleteUser(w http.ResponseWriter, r *http.Request, id int) {
 	for i, user := range users {
 		if user.ID == id {
 			users = append(users[:i], users[i+1:]...)
-			w.WriteHeader(http.StatusNoContent)
+
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusOK)
+			w.Write([]byte(`{"message":"User deleted successfully"}`))
 			return
 		}
 	}
 	http.Error(w, "User not found", http.StatusNotFound)
 }
 
-func healthHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(`{"status":"UP","message":"Server is running"}`))
-}
+// func healthHandler(w http.ResponseWriter, r *http.Request) {
+// 	if r.Method != http.MethodGet {
+// 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+// 		return
+// 	}
+
+// 	w.Header().Set("Content-Type", "application/json")
+// 	w.WriteHeader(http.StatusOK)
+// 	w.Write([]byte(`{"status":"UP","message":"Server is running"}`))
+// }
 
