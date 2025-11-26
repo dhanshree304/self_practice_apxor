@@ -20,13 +20,13 @@ func main() {
 	mux.HandleFunc("/update", handlers.UpdateUser)
 	mux.HandleFunc("/delete", handlers.DeleteUser)
 
-	// ✅ Fix CORS
+	//  Fix CORS error
 	handler := cors.New(cors.Options{
 		AllowedOrigins: []string{"http://localhost:3000"},
 		AllowedMethods: []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders: []string{"Content-Type", "Authorization"},
 	}).Handler(mux)
 
-	log.Println("✅ Server running at http://localhost:8080")
+	log.Println("Server running at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", handler))
 }
