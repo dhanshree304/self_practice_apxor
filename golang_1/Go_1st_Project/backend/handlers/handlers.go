@@ -18,25 +18,25 @@ type User struct {
 	Email string             `json:"email"`
 }
 
-// ✅ CREATE
+// CREATE user
 func CreateUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var user User
 	json.NewDecoder(r.Body).Decode(&user)
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-
+	
 	result, err := db.Collection.InsertOne(ctx, user)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
 	json.NewEncoder(w).Encode(result)
+	
+
 }
 
-// ✅ READ ALL
+// READ ALL user or get all user
 func GetUsers(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -60,7 +60,7 @@ func GetUsers(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(users)
 }
 
-// ✅ UPDATE
+// UPDATE  user
 func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -89,7 +89,7 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(result)
 }
 
-// ✅ DELETE
+//  DELETE user
 func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
