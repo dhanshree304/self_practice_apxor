@@ -1,0 +1,26 @@
+{
+  "posts":
+  [
+    { "id": 1, "title": "Morning Routine", "body": "A simple routine to start the day with focus and energy." },
+    { "id": 2, "title": "Learning Goals", "body": "Setting small, clear goals makes learning more manageable." },
+    { "id": 3, "title": "Healthy Habits", "body": "Daily habits can have a big impact over time." },
+    { "id": 4, "title": "Teamwork", "body": "Working together often leads to better results." },
+    { "id": 5, "title": "Curiosity", "body": "Asking questions helps you understand the world better." },
+    { "id": 6, "title": "Time Management", "body": "Planning ahead can reduce stress and save time." },
+    { "id": 7, "title": "Creativity", "body": "Creativity can be practiced like any other skill." },
+    { "id": 8, "title": "Problem Solving", "body": "Breaking problems into steps makes them easier to solve." },
+    { "id": 9, "title": "Practice", "body": "Consistent practice helps improve performance." },
+    { "id": 10, "title": "Focus", "body": "Reducing distractions can improve concentration." },
+    { "id": 11, "title": "Communication", "body": "Clear communication helps avoid misunderstandings." },
+    { "id": 12, "title": "Responsibility", "body": "Taking responsibility builds trust and confidence." },
+    { "id": 13, "title": "Adaptability", "body": "Being flexible helps when plans change." },
+    { "id": 14, "title": "Motivation", "body": "Finding personal reasons can increase motivation." },
+    { "id": 15, "title": "Learning From Mistakes", "body": "Mistakes can be useful learning opportunities." },
+    { "id": 16, "title": "Patience", "body": "Progress often takes time and effort." },
+    { "id": 17, "title": "Organization", "body": "Keeping things organized can save time later." },
+    { "id": 18, "title": "Collaboration", "body": "Sharing ideas can lead to better solutions." },
+    { "id": 19, "title": "Confidence", "body": "Confidence grows with experience and practice." },
+    { "id": 20, "title": "Reflection", "body": "Reflecting on your day can help you improve tomorrow." }
+  ]
+
+}

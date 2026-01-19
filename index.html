@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rdExpert Products</title>
+
+  <style>
+    :root {
+      --blue: #2563eb;
+      --light-blue: #eef4ff;
+      --bg: #f6f9ff;
+      --card: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, #f9fbff 100%);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 90px 20px 70px;
+      background: radial-gradient(circle at top, #edf3ff 0%, #f9fbff 60%);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+
+    /* LAYOUT */
+    main {
+      max-width: 1100px;
+      margin: 0 auto 90px;
+      padding: 0 20px;
+    }
+
+    section {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      padding: 40px 40px 44px;
+      margin-bottom: 36px;
+    }
+
+    section h2 {
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+    }
+
+    section h3 {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--blue);
+    }
+
+    section p {
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 12px 0 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #475569;
+    }
+
+    /* RESOURCES */
+    .resources {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .resources a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .resources a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      section {
+        padding: 30px 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>rdExpert Products</h1>
+    <p>
+      Statistical Test Optimization, Engineering Design Optimization, and Requirements & Test Certification
+      based on the pioneering Quality Engineering methods of Dr. Madhav Phadke.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Statistical Test Optimization</h2>
+      <p>
+        rdExpert Statistical Test Optimization replaces inefficient exhaustive testing with a
+        scientifically optimized approach using Design of Experiments (DOE) and orthogonal arrays.
+        This enables maximum test coverage with significantly fewer test cases while maintaining
+        statistical confidence.
+      </p>
+
+      <h3>Key Capabilities</h3>
+      <ul>
+        <li>Optimized test planning using DOE and orthogonal arrays</li>
+        <li>Reduction of test cases while preserving coverage and rigor</li>
+        <li>Identification of critical factors and interactions</li>
+        <li>Data-driven risk and coverage assessment</li>
+        <li>Support for hardware, software, system, and cyber testing</li>
+      </ul>
+
+      <h3>Industry Evidence</h3>
+      <div class="resources">
+        <a href="http://phadkeassociates.com/media/track614668_Mackertich_Raytheon IDS NDIA.pdf"
+          target="_blank">Raytheon NDIA Presentation – Productivity and Quality Improvements →</a>
+        <a href="http://phadkeassociates.com/media/test-optimization-nov2812_Raytheon_Moresteam.wmv"
+          target="_blank">Raytheon Test Optimization Video – Dr. Neal Mackertich →</a>
+        <a href="http://phadkeassociates.com/media/T15051_Smith_Raytheon IDS CMMI.pdf" target="_blank">CMMI Conference –
+          Impact of Statistical Test Optimization →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Engineering Design Optimization</h2>
+      <p>
+        rdExpert Engineering Design Optimization enables robust, high-quality designs by applying
+        statistical methods early in the engineering lifecycle. This approach minimizes variability,
+        reduces rework, and improves long-term reliability.
+      </p>
+
+      <h3>Key Capabilities</h3>
+      <ul>
+        <li>Robust parameter design using statistical methods</li>
+        <li>Early identification of noise factors and sensitivities</li>
+        <li>Structured design trade-off analysis</li>
+        <li>Support for complex, multi-factor engineering systems</li>
+      </ul>
+
+      <h3>Thought Leadership</h3>
+      <div class="resources">
+        <a href="http://phadkeassociates.com/media/T01 - Phadke ASQ WQC 2014.pdf" target="_blank">ASQ World Quality
+          Congress – Reducing Software and Testing Cost →</a>
+        <a href="http://phadkeassociates.com/media/ATS 2014_Phadke_Decoding DoD Guidance for Design of Experiments_Approved.pdf"
+          target="_blank">Aerospace Corporation – DOE and DoD Guidance →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Requirements & Test Certification</h2>
+      <p>
+        rdExpert provides statistically defensible methods to ensure requirements are testable,
+        verifiable, and certifiable. These methods are especially critical for regulated and
+        mission-critical defense, aerospace, and cyber programs.
+      </p>
+
+      <h3>Key Capabilities</h3>
+      <ul>
+        <li>Requirements-to-test traceability using optimized test strategies</li>
+        <li>Statistical justification of test adequacy and coverage</li>
+        <li>Support for certification, audits, and compliance reviews</li>
+        <li>Alignment with DoD and industry testing guidance</li>
+      </ul>
+
+      <h3>Case Studies & Articles</h3>
+      <div class="resources">
+        <a href="http://phadkeassociates.com/media/Raytheon Technology Today - 2 Page - Article Only.pdf"
+          target="_blank">Raytheon Technology Today – Cost Savings and Competitive Advantage →</a>
+        <a href="http://phadkeassociates.com/media/13958_Rogers_Test_Opt_Using_DOE.pdf" target="_blank">Cyber Operations
+          Center – rdExpert Test Suite Highlights →</a>
+        <a href="http://phadkeassociates.com/media/201111-Phadke.pdf" target="_blank">Crosstalk Magazine – Statistical
+          Methods in Defense Testing →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Training, Consulting, and Software</h2>
+      <p>
+        In addition to rdExpert software, we provide comprehensive training and consulting services
+        to help organizations successfully adopt Statistical Test Optimization and Quality Engineering.
+      </p>
+
+      <ul>
+        <li>Hands-on training in DOE and Statistical Test Optimization</li>
+        <li>Test planning and optimization consulting</li>
+        <li>Executive briefings and technical workshops</li>
+        <li>Keynote and tutorial presentations for industry conferences</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

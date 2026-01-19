@@ -33,6 +33,9 @@ Struct	Custom data type that groups fields
 Field	Variable inside a struct
 Method	Function attached to a struct
 
-
+defer :=whatever we write in defer in runs last in the end of the function
+similar like cleanup useEffect in react
 
 //✔️ / ✖️
+
+* will gives actual value

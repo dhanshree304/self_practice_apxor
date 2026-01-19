@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phadke Associates - Engineering Excellence Through Statistical Innovation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            /* light background */
+            color: #0b1220;
+            /* dark text */
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background .4s ease, color .4s ease;
+        }
+
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+            background: transparent;
+        }
+
+
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #000000;
+            /* Black text instead of white */
+        }
+
+        .logo span {
+            color: #2563eb;
+            /* Blue dot remains */
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .cta-button {
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #111827;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(1200px 600px at 20% 0%, rgba(37, 99, 235, 0.08), transparent 60%),
+                radial-gradient(1000px 500px at 80% 30%, rgba(139, 92, 246, 0.08), transparent 60%),
+                #ffffff;
+        }
+
+
+        .hero-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: #3b82f6;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: #8b5cf6;
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .blob-3 {
+            width: 350px;
+            height: 350px;
+            background: #ec4899;
+            top: 50%;
+            right: 20%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-50px, 50px) scale(0.9);
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #3b82f6;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            letter-spacing: -0.03em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #999;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1.5px solid #cbd5e1;
+            color: #0f172a;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .metric-card {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        section {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight {
+            color: #3b82f6;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .solution-card {
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            border-color: #3b82f6;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .solution-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-card:hover .solution-icon {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .solution-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-subtitle {
+            color: #3b82f6;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-description {
+            color: #999;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-features li {
+            padding: 0.5rem 0;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .check-icon {
+            color: #3b82f6;
+            font-weight: 700;
+        }
+
+        .solution-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 1;
+            transition: gap 0.3s ease;
+        }
+
+        .solution-link:hover {
+            gap: 1rem;
+        }
+
+
+
+        .methodology-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .methodology-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .methodology-text p {
+            color: #999;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .methodology-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        .methodology-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .visual-card {
+            position: absolute;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .visual-card:hover {
+            transform: scale(1.05);
+            border-color: #3b82f6;
+        }
+
+        .visual-card:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 60%;
+        }
+
+        .visual-card:nth-child(2) {
+            top: 150px;
+            right: 0;
+            width: 55%;
+        }
+
+        .visual-card:nth-child(3) {
+            bottom: 0;
+            left: 10%;
+            width: 50%;
+        }
+
+        .visual-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        .visual-card p {
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+        }
+
+        .case-study {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .case-study:hover {
+            transform: translateY(-10px);
+            border-color: #3b82f6;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .case-study-header {
+            padding: 3rem 3rem 2rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+
+        .case-study-industry {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-subtitle {
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .case-study-body {
+            padding: 2rem 3rem 3rem;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .case-metric {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 12px;
+        }
+
+        .case-metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-metric-label {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .case-study-description {
+            color: #999;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .expertise-card {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+        }
+
+        .expertise-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3b82f6;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+
+
+
+        .team-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .team-leader {
+            margin-bottom: 4rem;
+        }
+
+        .team-leader h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-title {
+            color: #3b82f6;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-bio {
+            color: #999;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .team-achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .achievement {
+            padding: 1.5rem;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.3;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: #3b82f6;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            background: #050505;
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #999;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+
+
+
+
+        @media (max-width: 1024px) {
+            .methodology-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .methodology-visual {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        /* Light header when scrolled */
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+        }
+
+        /* Links on light */
+        .nav-links a {
+            color: #334155;
+        }
+
+        .nav-links a:hover {
+            color: #0f172a;
+        }
+
+        /* Keep brand blue */
+        .highlight {
+            color: #2563eb;
+        }
+
+        a {
+            color: #2563eb;
+        }
+
+        a:hover {
+            color: #1e40af;
+        }
+
+        /* Remove dark section backgrounds so page stays bright */
+        #solutions,
+        #methodology,
+        #case-studies,
+        #expertise,
+        #team {
+            background: transparent;
+        }
+
+        /* Cards on white */
+        .solution-card,
+        .case-study,
+        .expertise-card,
+        .metric-card,
+        .stat-item,
+        .achievement {
+            background: #ffffff !important;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Footer on light */
+        footer {
+            background: #f8fafc;
+            border-top: 1px solid rgba(15, 23, 42, 0.1);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #475569;
+        }
+
+        .footer-section a:hover {
+            color: #2563eb;
+        }
+
+        .footer-bottom {
+            color: #64748b;
+        }
+
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: #ffffff;
+                color: #111827;
+                flex-direction: column;
+                justify-content: center;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .solutions-grid,
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .methodology-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .visual-card {
+                position: static !important;
+                width: 100% !important;
+                margin-bottom: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* --- Clients logo layout & containment --- */
+        #clients {
+            background: #ffffff;
+            /* white section so logos pop */
+            color: #0a0a0a;
+
+            clients-wrap {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .logo-item {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            padding: 28px;
+            /* inner padding for the art */
+            display: flex;
+            /* center the logo */
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* prevent spill outside the card */
+        }
+
+        /* The key constraints so no logo spills out */
+        .logo-img {
+            max-width: 90%;
+            /* never exceed card width */
+            max-height: 56px;
+            /* uniform visual height */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* respect aspect ratio */
+            display: block;
+            filter: grayscale(100%);
+            opacity: 0.9;
+            transition: transform .2s ease, opacity .2s ease, filter .2s ease;
+        }
+
+        .logo-item:hover .logo-img {
+            filter: none;
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        /* Tweak for small screens: allow a bit more height */
+        @media (max-width: 640px) {
+            .logo-img {
+                max-height: 48px;
+            }
+        }
+
+        /* === Interactive, readable light theme overrides === */
+        :root {
+            --text: #0b1220;
+            --muted: #4b5563;
+            --card: rgba(255, 255, 255, 0.85);
+            --stroke: #e5e7eb;
+        }
+
+        /* Make the whole site readable on a light bg */
+        body {
+            background: #f8fafc;
+            /* soft white */
+            color: var(--text);
+        }
+
+        /* Replace dark hero overlay with subtle light gradients */
+        .hero-bg {
+            background: radial-gradient(1200px 800px at 50% 15%, rgba(59, 130, 246, .12), transparent 60%),
+                radial-gradient(900px 700px at 80% 85%, rgba(139, 92, 246, .10), transparent 60%);
+        }
+
+        /* INTERACTIVE BACKGROUND LAYER (no HTML changes) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -20vmax;
+            z-index: -2;
+            pointer-events: none;
+            background:
+                radial-gradient(1200px 1200px at var(--mx, 50%) var(--my, 50%), rgba(59, 130, 246, .14), transparent 60%),
+                radial-gradient(900px 900px at 15% 20%, rgba(14, 165, 233, .12), transparent 60%),
+                radial-gradient(900px 900px at 85% 80%, rgba(139, 92, 246, .10), transparent 60%);
+            filter: blur(40px);
+            animation: floatBG 28s ease-in-out infinite;
+        }
+
+        /* Subtle texture so white cards pop */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                repeating-linear-gradient(0deg, rgba(0, 0, 0, .02) 0 1px, transparent 1px 120px),
+                repeating-linear-gradient(90deg, rgba(0, 0, 0, .02) 0 1px, transparent 1px 120px);
+            mix-blend-mode: multiply;
+        }
+
+        @keyframes floatBG {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-2%)
+            }
+        }
+
+        /* Nav readability on light bg */
+        .logo {
+            color: var(--text);
+        }
+
+        .nav-links a {
+            color: #2b3345;
+        }
+
+        .nav-links a:hover {
+            color: #111;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, .9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--stroke);
+        }
+
+        /* Cards/tiles become light, legible */
+        .metric-card,
+        .solution-card,
+        .case-study,
+        .expertise-card,
+        .stat-item,
+        .logo-item {
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
+        }
+
+        /* Hero text on light bg */
+        .hero h1 {
+            color: var(--text);
+        }
+
+        .hero p {
+            color: var(--muted);
+        }
+
+        /* Client logos: keep contained & centered on light bg */
+        .logo-grid {
+            gap: 1.5rem;
+        }
+
+        .logo-item {
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            /* consistent tile height */
+        }
+
+        .logo-img {
+            max-width: 80%;
+            max-height: 70%;
+            object-fit: contain;
+            filter: grayscale(100%) contrast(1.05);
+            /* tidy look on light bg */
+            transition: transform .25s ease, filter .25s ease;
+        }
+
+        .logo-item:hover .logo-img {
+            transform: scale(1.04);
+            filter: grayscale(0);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="nav-container">
+            <div class="logo">Phadke<span>.</span></div>
+            <div class="nav-links" id="navLinks">
+                <a href="#solutions">Solutions</a>
+                <a href="#methodology">Methodology</a>
+                <a href="#product">Products</a>
+                <a href="#case-studies">Case Studies</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#clients">Clients</a>
+                <a href="#team">Team</a>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Trusted by Fortune 500 Companies Since 1985</div>
+            <h1>Engineering<br><span class="gradient-text">Excellence</span></h1>
+            <p>Transform your quality engineering with proven statistical methodologies. Four decades of innovation in
+                robust design, test optimization, and real-time quality control.</p>
+            <div class="hero-buttons">
+                <a href="#solutions" class="btn-primary">Explore Solutions</a>
+                <a href="#contact" class="btn-secondary">Schedule Consultation</a>
+            </div>
+            <div class="metrics">
+                <div class="metric-card">
+                    <div class="metric-icon">&#128200;</div>
+                    <div class="metric-value">40+</div>
+                    <div class="metric-label">Years of Excellence</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">&#127919;</div>
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">Projects Delivered</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">&#9889;</div>
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Cost Reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">Our Solutions</div>
+                <h2 class="section-title">Intelligent <span class="highlight">Software</span> & Methods</h2>
+                <p class="section-description">Cutting-edge tools and proven methodologies that deliver measurable
+                    results across critical industries</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">&#128202;</div>
+                    <h3 class="solution-title">EPOQS™</h3>
+                    <div class="solution-subtitle">Online Quality Control</div>
+                    <p class="solution-description">Revolutionary software for real-time statistical process control
+                        that transforms manufacturing quality through predictive analytics and automated
+                        decision-making.</p>
+                    <ul class="solution-features">
+                        <li><span class="check-icon">&#10003;</span> Real-time SPC with advanced algorithms</li>
+                        <li><span class="check-icon">&#10003;</span> Automated anomaly detection</li>
+                        <li><span class="check-icon">&#10003;</span> Predictive quality insights</li>
+                        <li><span class="check-icon">&#10003;</span> Multi-site deployment capability</li>
+                    </ul>
+                    <a href="#" class="solution-link">Learn more &rarr;</a>
+                </div>
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">&#128300;</div>
+                    <h3 class="solution-title">Test Optimization</h3>
+                    <div class="solution-subtitle">Orthogonal Array Methods</div>
+                    <p class="solution-description">Advanced statistical techniques using orthogonal arrays that reduce
+                        testing costs by up to 90% while improving coverage and reliability.</p>
+                    <ul class="solution-features">
+                        <li><span class="check-icon">&#10003;</span> Taguchi orthogonal array design</li>
+                        <li><span class="check-icon">&#10003;</span> Minimal test configurations</li>
+                        <li><span class="check-icon">&#10003;</span> Maximum parameter coverage</li>
+                        <li><span class="check-icon">&#10003;</span> Rapid results with high confidence</li>
+                    </ul>
+                    <a href="#" class="solution-link">Learn more &rarr;</a>
+                </div>
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">&#9881;</div>
+                    <h3 class="solution-title">Robust Design</h3>
+                    <div class="solution-subtitle">Engineering Excellence</div>
+                    <p class="solution-description">Comprehensive Taguchi methods and Design of Experiments strategies
+                        that optimize products for performance, cost, and manufacturability.</p>
+                    <ul class="solution-features">
+                        <li><span class="check-icon">&#10003;</span> Parameter design optimization</li>
+                        <li><span class="check-icon">&#10003;</span> Tolerance design analysis</li>
+                        <li><span class="check-icon">&#10003;</span> Signal-to-noise ratio maximization</li>
+                        <li><span class="check-icon">&#10003;</span> Quality loss function minimization</li>
+                    </ul>
+                    <a href="#" class="solution-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+
+    <section id="methodology">
+        <div class="container">
+            <div class="methodology-content">
+                <div class="methodology-text fade-in">
+                    <div class="section-tag">Our Approach</div>
+                    <h3>Four Decades of<br>Statistical Innovation</h3>
+                    <p>Founded by Dr. Madhav Phadke, pioneer in quality engineering and collaborator with Dr. Genichi
+                        Taguchi, we bring unparalleled expertise in robust design, orthogonal arrays, and statistical
+                        process control.</p>
+                    <p>Our methodologies have been proven across thousands of applications, from semiconductor
+                        manufacturing to aerospace systems, consistently delivering breakthrough improvements in quality
+                        and cost.</p>
+                    <div class="methodology-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5,500+</div>
+                            <div class="stat-label">Research Citations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">128:8</div>
+                            <div class="stat-label">Tests Reduced</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Defect Reduction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">60%</div>
+                            <div class="stat-label">Faster Time-to-Market</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="methodology-visual fade-in">
+                    <div class="visual-card">
+                        <h4>Orthogonal Arrays</h4>
+                        <p>Balanced experimental designs that test all parameter combinations efficiently with minimal
+                            runs</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>Signal-to-Noise Ratio</h4>
+                        <p>Optimization metric that ensures robustness against uncontrollable noise factors</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>Parameter Design</h4>
+                        <p>Systematic approach to identify optimal settings that minimize variation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="hero" id="product">
+        <div class="hero-bg"></div>
+    
+        <div class="hero-content">
+            <span class="hero-badge">Products</span>
+            <h1>
+                rdExpert <span class="gradient-text">Products</span>
+            </h1>
+            <p>
+                Statistical Test Optimization, Engineering Design Optimization, and
+                Requirements & Test Certification based on the pioneering
+                Quality Engineering methods of Dr. Madhav Phadke.
+            </p>
+        </div>
+    </section>
+    
+    <section id="solutions">
+        <div class="container">
+    
+            <div class="section-header fade-in">
+                <span class="section-tag">Capabilities</span>
+                <h2 class="section-title">
+                    Proven <span class="highlight">Engineering Solutions</span>
+                </h2>
+                <p class="section-description">
+                    Scientifically grounded methods that replace exhaustive testing
+                    and intuition with statistically optimized decision-making.
+                </p>
+            </div>
+    
+            <div class="solutions-grid">
+    
+                <!-- Statistical Test Optimization -->
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">📊</div>
+                    <h3 class="solution-title">Statistical Test Optimization</h3>
+                    <p class="solution-description">
+                        Replaces inefficient exhaustive testing with optimized Design of
+                        Experiments (DOE) and orthogonal arrays to achieve maximum coverage
+                        with fewer tests and defensible statistical confidence.
+                    </p>
+    
+                    <ul class="solution-features">
+                        <li><span class="check-icon">✓</span> DOE-based optimized test planning</li>
+                        <li><span class="check-icon">✓</span> Reduced test cases with preserved rigor</li>
+                        <li><span class="check-icon">✓</span> Identification of critical interactions</li>
+                        <li><span class="check-icon">✓</span> Data-driven risk & coverage assessment</li>
+                        <li><span class="check-icon">✓</span> Hardware, software, system & cyber testing</li>
+                    </ul>
+    
+                    <a class="solution-link"
+                        href="http://phadkeassociates.com/media/track614668_Mackertich_Raytheon IDS NDIA.pdf"
+                        target="_blank">
+                        View Industry Evidence →
+                    </a>
+                </div>
+    
+                <!-- Engineering Design Optimization -->
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">⚙️</div>
+                    <h3 class="solution-title">Engineering Design Optimization</h3>
+                    <p class="solution-description">
+                        Enables robust, high-quality designs by applying statistical
+                        methods early in the engineering lifecycle to reduce variability,
+                        rework, and long-term risk.
+                    </p>
+    
+                    <ul class="solution-features">
+                        <li><span class="check-icon">✓</span> Robust parameter design</li>
+                        <li><span class="check-icon">✓</span> Noise factor & sensitivity analysis</li>
+                        <li><span class="check-icon">✓</span> Structured design trade-offs</li>
+                        <li><span class="check-icon">✓</span> Multi-factor system optimization</li>
+                    </ul>
+    
+                    <a class="solution-link" href="http://phadkeassociates.com/media/T01 - Phadke ASQ WQC 2014.pdf"
+                        target="_blank">
+                        View Thought Leadership →
+                    </a>
+                </div>
+    
+                <!-- Requirements & Test Certification -->
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🛡️</div>
+                    <h3 class="solution-title">Requirements & Test Certification</h3>
+                    <p class="solution-description">
+                        Statistically defensible methods to ensure requirements are testable,
+                        verifiable, and certifiable for regulated and mission-critical
+                        defense, aerospace, and cyber programs.
+                    </p>
+    
+                    <ul class="solution-features">
+                        <li><span class="check-icon">✓</span> Requirements-to-test traceability</li>
+                        <li><span class="check-icon">✓</span> Statistical justification of adequacy</li>
+                        <li><span class="check-icon">✓</span> Certification & audit support</li>
+                        <li><span class="check-icon">✓</span> Alignment with DoD guidance</li>
+                    </ul>
+    
+                    <a class="solution-link"
+                        href="http://phadkeassociates.com/media/Raytheon Technology Today - 2 Page - Article Only.pdf"
+                        target="_blank">
+                        View Case Studies →
+                    </a>
+                </div>
+    
+                <!-- Training & Consulting -->
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🎓</div>
+                    <h3 class="solution-title">Training, Consulting & Software</h3>
+                    <p class="solution-description">
+                        Comprehensive training and consulting services that enable successful
+                        adoption of Statistical Test Optimization and Quality Engineering.
+                    </p>
+    
+                    <ul class="solution-features">
+                        <li><span class="check-icon">✓</span> DOE & Test Optimization training</li>
+                        <li><span class="check-icon">✓</span> Test planning consulting</li>
+                        <li><span class="check-icon">✓</span> Executive briefings & workshops</li>
+                        <li><span class="check-icon">✓</span> Industry keynotes & tutorials</li>
+                    </ul>
+    
+                    <a class="solution-link" href="#contact">
+                        Engage with Experts →
+                    </a>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+<section id="case-studies">
+    <div class="container">
+
+        <div class="section-header fade-in">
+            <span class="section-tag">Success Stories</span>
+            <h2 class="section-title">Proven <span class="highlight">Impact</span></h2>
+            <p class="section-description">
+                Real-world results from organizations that transformed productivity,
+                quality, and test effectiveness using Statistical Test Optimization.
+            </p>
+        </div>
+
+        <div class="case-studies-grid">
+
+            <!-- Raytheon NDIA -->
+            <div class="case-study fade-in">
+                <div class="case-study-header">
+                    <span class="case-study-industry">Defense</span>
+                    <h3 class="case-study-title">Raytheon – NDIA Conference</h3>
+                    <p class="case-study-subtitle">Productivity & Quality Improvement</p>
+                </div>
+                <div class="case-study-body">
+                    <p class="case-study-description">
+                        Raytheon presentation at the National Defense Industry Association
+                        detailing how Phadke’s Statistical Test Optimization enhanced
+                        productivity and quality.
+                    </p>
+                    <a class="case-study-link"
+                        href="http://phadkeassociates.com/media/track614668_Mackertich_Raytheon IDS NDIA.pdf"
+                        target="_blank">
+                        View Presentation →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Raytheon Video -->
+            <div class="case-study fade-in">
+                <div class="case-study-header">
+                    <span class="case-study-industry">Defense</span>
+                    <h3 class="case-study-title">Raytheon – Test Optimization Experience</h3>
+                    <p class="case-study-subtitle">Practitioner Insights</p>
+                </div>
+                <div class="case-study-body">
+                    <p class="case-study-description">
+                        Dr. Neal Mackertich, Raytheon Fellow, discusses real-world experience
+                        applying optimized test methods at scale.
+                    </p>
+                    <a class="case-study-link"
+                        href="http://phadkeassociates.com/media/test-optimization-nov2812_Raytheon_Moresteam.wmv"
+                        target="_blank">
+                        Watch Video →
+                    </a>
+                </div>
+            </div>
+
+            <!-- CMMI -->
+            <div class="case-study fade-in">
+                <div class="case-study-header">
+                    <span class="case-study-industry">Process Improvement</span>
+                    <h3 class="case-study-title">Raytheon – CMMI Conference</h3>
+                    <p class="case-study-subtitle">Statistical Test Optimization Impact</p>
+                </div>
+                <div class="case-study-body">
+                    <p class="case-study-description">
+                        Carnegie Mellon University CMMI conference presentation describing
+                        the impact of Statistical Test Optimization on engineering programs.
+                    </p>
+                    <a class="case-study-link"
+                        href="http://phadkeassociates.com/media/T15051_Smith_Raytheon IDS CMMI.pdf" target="_blank">
+                        View Presentation →
+                    </a>
+                </div>
+            </div>
+
+            <!-- ASQ -->
+            <div class="case-study fade-in">
+                <div class="case-study-header">
+                    <span class="case-study-industry">Quality Engineering</span>
+                    <h3 class="case-study-title">ASQ World Quality Congress</h3>
+                    <p class="case-study-subtitle">Reducing Software & Test Cost</p>
+                </div>
+                <div class="case-study-body">
+                    <p class="case-study-description">
+                        Dr. Madhav Phadke presents the importance of statistical methods
+                        for reducing software and testing costs.
+                    </p>
+                    <a class="case-study-link" href="http://phadkeassociates.com/media/T01 - Phadke ASQ WQC 2014.pdf"
+                        target="_blank">
+                        View Presentation →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Raytheon Technology Today -->
+            <div class="case-study fade-in">
+                <div class="case-study-header">
+                    <span class="case-study-industry">Defense</span>
+                    <h3 class="case-study-title">Raytheon Technology Today</h3>
+                    <p class="case-study-subtitle">Competitive Advantage</p>
+                </div>
+                <div class="case-study-body">
+                    <p class="case-study-description">
+                        Magazine article highlighting substantial savings and competitive
+                        advantage delivered to defense clients.
+                    </p>
+                    <a class="case-study-link"
+                        href="http://phadkeassociates.com/media/Raytheon Technology Today - 2 Page - Article Only.pdf"
+                        target="_blank">
+                        Read Article →
+                    </a>
+                </div>
+            </div>
+
+            <!-- VMware -->
+            <div class="case-study fade-in">
+                <div class="case-study-header">
+                    <span class="case-study-industry">Software</span>
+                    <h3 class="case-study-title">VMware – Guest OS Validation</h3>
+                    <p class="case-study-subtitle">rdExpert in Practice</p>
+                </div>
+                <div class="case-study-body">
+                    <p class="case-study-description">
+                        VMware outlines success using rdExpert and orthogonal arrays
+                        to validate guest operating system customizations.
+                    </p>
+                    <a class="case-study-link"
+                        href="http://phadkeassociates.com/media/Implementation of Orthogonal Array using rdExpertT on GOS Customization-ver1.0.pdf"
+                        target="_blank">
+                        View Case Study →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+   
+
+
+
+
+
+    <section id="expertise">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">Our Expertise</div>
+                <h2 class="section-title">World-Class <span class="highlight">Capabilities</span></h2>
+                <p class="section-description">Comprehensive solutions across the product development lifecycle</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <div class="expertise-number">01</div>
+                    <h3>Design Optimization</h3>
+                    <p>Robust parameter design using Taguchi methods to minimize sensitivity to noise factors and
+                        achieve optimal performance across operating conditions.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-number">02</div>
+                    <h3>Test Strategy</h3>
+                    <p>Orthogonal array-based test planning that dramatically reduces test effort while ensuring
+                        comprehensive coverage of critical interactions.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-number">03</div>
+                    <h3>Process Control</h3>
+                    <p>Real-time statistical process control with EPOQS software for immediate detection and correction
+                        of quality issues.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-number">04</div>
+                    <h3>Tolerance Design</h3>
+                    <p>Scientific approaches to tolerance allocation that balance performance requirements with
+                        manufacturing economics.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-number">05</div>
+                    <h3>DOE & Analysis</h3>
+                    <p>Advanced Design of Experiments methodologies including fractional factorial, response surface,
+                        and mixture designs.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-number">06</div>
+                    <h3>Training & Consulting</h3>
+                    <p>Comprehensive education programs and hands-on consulting to transfer knowledge and build internal
+                        capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients">
+        <div class="clients-wrap">
+            <div class="section-header fade-in">
+                <div class="section-tag">Our Clients</div>
+                <h2 class="section-title">Trusted by <span class="highlight">Industry Leaders</span></h2>
+                <p class="section-description">We partner with the world’s most respected organizations to deliver
+                    measurable impact.</p>
+            </div>
+
+            <div class="logo-grid fade-in" aria-label="Client logos">
+                <!-- One block per logo -->
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-General_Motors_(2021).svg.png" alt="General Motors logo">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-Ford_Motor_Company_Logo.svg.png" alt="Ford Motor Company logo"
+                        loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-Lockheed_Martin_logo.svg.png" alt="Lockheed Martin logo"
+                        loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-RTX_Raytheon_Technologies_logo.svg.png"
+                        alt="Raytheon Technologies logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-General_Dynamics_logo.svg.png" alt="General Dynamics logo"
+                        loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="128px-BNY_logo_2024.svg.png" alt="Bank of New York Mellon logo"
+                        loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="64px-Goldman_Sachs_logo.svg.png" alt="Goldman Sachs logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="JPMorganChase.png" alt="JPMorgan Chase logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="128px-Applied_Materials_Inc._Logo.svg.png" alt="Applied Materials logo"
+                        loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-Logo_of_the_United_States_Navy.svg.png"
+                        alt="United States Navy logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-US_Air_Force_Logo_Solid_Colour.svg.png"
+                        alt="United States Air Force logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-Mark_of_the_United_States_Army.svg.png"
+                        alt="United States Army logo" loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-Siemens_Healthineers_logo.svg.png" alt="Siemens Healthcare logo"
+                        loading="lazy">
+                </div>
+                <div class="logo-item">
+                    <img class="logo-img" src="256px-Roche_Logo.svg.png" alt="Roche Diagnostics logo" loading="lazy">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="team">
+        <div class="container">
+            <div class="team-content fade-in">
+                <div class="section-header">
+                    <div class="section-tag">Leadership</div>
+                    <h2 class="section-title">Pioneering <span class="highlight">Excellence</span></h2>
+                </div>
+                <div class="team-leader">
+                    <h3>Dr. Madhav S. Phadke</h3>
+                    <div class="team-title">Founder & President</div>
+                    <p class="team-bio">Ph.D. Mechanical Engineering, University of Wisconsin-Madison (1973). Pioneer in
+                        quality engineering and robust design, Dr. Phadke has published extensively on Taguchi methods
+                        and their applications. His work at AT&T Bell Laboratories established many of the methodologies
+                        now standard in the industry.</p>
+                </div>
+                <div class="team-achievements">
+                    <div class="achievement">
+                        <div class="achievement-icon">&#128218;</div>
+                        <h4>5,500+ Citations</h4>
+                        <p>Highly influential research in quality engineering</p>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">&#127942;</div>
+                        <h4>Industry Pioneer</h4>
+                        <p>Established Taguchi methods in Western manufacturing</p>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">&#127891;</div>
+                        <h4>37+ Publications</h4>
+                        <p>Seminal papers on robust design and DOE</p>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">&#128161;</div>
+                        <h4>Fortune 500 Advisor</h4>
+                        <p>Trusted consultant to global industry leaders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2>Transform Your<br>Quality Engineering</h2>
+            <p>Join industry leaders who trust Phadke Associates for breakthrough results</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-white">Schedule a Consultation</a>
+                <a href="#" class="btn-outline">Download Our Methodology Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Phadke Associates</h4>
+                <p>Engineering excellence through statistical innovation since 1985.</p>
+                <p>Colts Neck, New Jersey</p>
+            </div>
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <a href="#">EPOQS Software</a>
+                <a href="#">Test Optimization</a>
+                <a href="#">Robust Design</a>
+                <a href="#">Process Control</a>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="#">Case Studies</a>
+                <a href="#">Publications</a>
+                <a href="#">Training Programs</a>
+                <a href="#">Technical Papers</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Our Team</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Phadke Associates, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var nav = document.getElementById('nav');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        }, { passive: true });
+
+
+        var menuToggle = document.getElementById('menuToggle');
+        var navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+        });
+
+        var allLinks = navLinks.querySelectorAll('a');
+        for (var i = 0; i < allLinks.length; i++) {
+            allLinks[i].addEventListener('click', function () {
+                navLinks.classList.remove('active');
+            });
+        }
+
+        var observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        var observer = new IntersectionObserver(function (entries) {
+            for (var i = 0; i < entries.length; i++) {
+                if (entries[i].isIntersecting) {
+                    entries[i].target.classList.add('visible');
+                }
+            }
+        }, observerOptions);
+
+        var fadeElements = document.querySelectorAll('.fade-in');
+        for (var i = 0; i < fadeElements.length; i++) {
+            observer.observe(fadeElements[i]);
+        }
+
+        var smoothLinks = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < smoothLinks.length; i++) {
+            smoothLinks[i].addEventListener('click', function (e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        }
+    </script>
+    <script>
+
+        // Cursor-follow background (throttled)
+        (() => {
+            let raf = null, mx = 50, my = 50, bgx = 0, bgy = 0;
+            const apply = () => {
+                document.documentElement.style.setProperty('--mx', mx + '%');
+                document.body.style.setProperty('--bgx', bgx + 'px');
+                document.body.style.setProperty('--bgy', bgy + 'px');
+                raf = null;
+            };
+            window.addEventListener('mousemove', (e) => {
+                mx = (e.clientX / window.innerWidth) * 100;
+                my = (e.clientY / window.innerHeight) * 100;
+                bgx = (e.clientX / window.innerWidth - 0.5) * 30;
+                bgy = (e.clientY / window.innerHeight - 0.5) * 30;
+                if (!raf) raf = requestAnimationFrame(apply);
+            }, { passive: true });
+        })();
+    </script>
+
+
+
+</body>
+
+</html>

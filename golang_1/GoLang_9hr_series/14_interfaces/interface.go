@@ -28,6 +28,8 @@ return a+b + v.first +v.second
 func (v values) multiply(a, b int) int{
 return a*b *v.first * v.second
 }
+
+
 //................................................
 
 //1)Define interface
@@ -57,6 +59,9 @@ return 3.14 *c.radius *c.radius
 func printArea(s Shape) {
     fmt.Println("Area:", s.Area())
 }
+
+
+
 func main (){
 //create struct object 
 
